@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase Timer with Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .timer-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            position: relative;
+        }
+        .timer-bar {
+            height: 100%;
+            width: 100%;
+            background-color: #4caf50;
+            transition: width linear;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Phase Timer with Progress Bar</h2>
+    <div id="phase"></div>
+    <img id="arrow" src="" alt="Phase Indicator">
+    <div class="timer-container">
+        <div class="timer-bar" id="timer-bar"></div>
+    </div>
+    <p id="timer">45</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="nextPhase">Next Phase</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        const phases = [
+            { type: "Banning Left", direction: "/Assets/Other/leftbanning.gif" },
+            { type: "Banning Right", direction: "/Assets/Other/rightbanning.gif" },
+            { type: "Picking Left", direction: "/Assets/Other/leftpicking.gif" },
+            { type: "Picking Right", direction: "/Assets/Other/rightpicking.gif" }
+        ];
+
+        let currentPhaseIndex = 0;
+        let timer = 45;
+        let timerInterval;
+        let timerRunning = false;
+        
+        const phaseElement = document.getElementById('phase');
+        const arrowElement = document.getElementById('arrow');
+        const timerElement = document.getElementById('timer');
+        const timerBar = document.getElementById('timer-bar');
+        const startButton = document.getElementById('start');
+        const stopButton = document.getElementById('stop');
+        const nextPhaseButton = document.getElementById('nextPhase');
+        const resetButton = document.getElementById('reset');
+
+        function updateUI() {
+            if (currentPhaseIndex < phases.length) {
+                const currentPhase = phases[currentPhaseIndex];
+                phaseElement.textContent = currentPhase.type;
+                arrowElement.src = currentPhase.direction;
+                timerElement.textContent = timer;
+                timerBar.style.transition = "none";
+                timerBar.style.width = "100%";
+                timerBar.style.left = "50%";
+                timerBar.style.transform = "translateX(-50%) scaleX(1)";
+            } else {
+                phaseElement.textContent = "All Phases Completed";
+                arrowElement.src = "";
+                timerElement.textContent = "";
+                timerBar.style.width = "0%";
+                nextPhaseButton.disabled = true;
+            }
+        }
+
+        function startTimer() {
+            if (!timerRunning) {
+                timerRunning = true;
+                timerBar.style.transition = `transform ${timer}s linear`;
+                timerBar.style.transform = "translateX(-50%) scaleX(0)";
+                timerInterval = setInterval(() => {
+                    if (timer > 0) {
+                        timer--;
+                        timerElement.textContent = timer;
+                    } else {
+                        clearInterval(timerInterval);
+                        timerRunning = false;
+                        moveToNextPhase();
+                    }
+                }, 1000);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            timerBar.style.transition = "none";
+        }
+
+        function moveToNextPhase() {
+            if (currentPhaseIndex < phases.length - 1) {
+                currentPhaseIndex++;
+                timer = 45;
+                stopTimer();
+                timerBar.style.transition = "none";
+                timerBar.style.transform = "translateX(-50%) scaleX(1)";
+                updateUI();
+                setTimeout(() => {
+                    timerBar.style.transition = `transform ${timer}s linear`;
+                    timerBar.style.transform = "translateX(-50%) scaleX(0)";
+                    startTimer();
+                }, 100);
+            }
+        }
+
+        function reset() {
+            clearInterval(timerInterval);
+            currentPhaseIndex = 0;
+            timer = 45;
+            timerRunning = false;
+            updateUI();
+        }
+
+        startButton.addEventListener('click', startTimer);
+        stopButton.addEventListener('click', stopTimer);
+        nextPhaseButton.addEventListener('click', () => {
+            stopTimer();
+            moveToNextPhase();
+        });
+        resetButton.addEventListener('click', reset);
+
+        updateUI();
+    </script>
+</body>
+</html>
