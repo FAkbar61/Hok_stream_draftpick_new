@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honor Of Kings - Scoreboard Overlay</title>
+    <link rel="stylesheet" href="scoreboard.css">
+</head>
+
+<body>
+
+    <!-- ===== STREAM OVERLAY AREA (1920x1080) ===== -->
+    <div class="scoreboard-overlay">
+
+        <!-- Corner Decorations -->
+        <div class="corner-deco top-left"><img src="Assets/Other/FalseLogoWhite.png" alt=""></div>
+        <div class="corner-deco top-right"><img src="Assets/Other/FalseLogoWhite.png" alt=""></div>
+        <div class="corner-deco bottom-left"><img src="Assets/Other/FalseLogoWhite.png" alt=""></div>
+        <div class="corner-deco bottom-right"><img src="Assets/Other/FalseLogoWhite.png" alt=""></div>
+
+        <!-- ===== HEADER BAR ===== -->
+        <div class="scoreboard-header">
+            <span id="victory-left" class="victory-text">VICTORY</span>
+
+            <div class="header-teams">
+                <!-- Left Team -->
+                <div class="team-left-header">
+                    <img id="logo-left" class="team-logo-header" src="Assets/Other/UIN JKT ESPORT Original.png" alt="Team A Logo">
+                    <span id="team-name-left" class="team-name-header">TEAM A</span>
+                </div>
+
+                <!-- Center Score Pill -->
+                <div class="score-box">
+                    <span id="score-left" class="score-display">0</span>
+                    <img class="center-logo" src="Assets/Other/logotengah2.png" alt="Honor of Kings">
+                    <span id="score-right" class="score-display">0</span>
+                </div>
+
+                <!-- Right Team -->
+                <div class="team-right-header">
+                    <span id="team-name-right" class="team-name-header">TEAM B</span>
+                    <img id="logo-right" class="team-logo-header" src="Assets/Other/UIN JKT ESPORT Original.png" alt="Team B Logo">
+                </div>
+            </div>
+
+            <span id="defeat-right" class="defeat-text">DEFEAT</span>
+        </div>
+
+        <!-- ===== HERO CARDS ===== -->
+        <div class="hero-cards-area">
+            <!-- Blue Side (Left, slots 1-5: Clash, Jungle, Mid, Farm, Roam) -->
+            <div class="team-cards team-cards-left">
+                <!-- Hero Card 1 (Clash Lane) -->
+                <div class="hero-card blue-side" id="card-1">
+                    <div class="spell-badge" id="spell-badge-1" title="Battle Spell"><img id="spell-img-1" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80115.jpg" alt="Flash"></div>
+                    <span class="hero-name-overlay" id="hero-name-1"></span>
+                    <div class="hero-portrait" id="hero-portrait-1">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-1">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-1-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-1-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-1-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-1-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-1-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-1-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Clash Lane">
+                        <img src="Assets/Lane/clash.png" alt="Clash Lane" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-1">Player 1</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 2 (Jungle) -->
+                <div class="hero-card blue-side" id="card-2">
+                    <div class="spell-badge" id="spell-badge-2" title="Battle Spell"><img id="spell-img-2" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80104.jpg" alt="Smite"></div>
+                    <span class="hero-name-overlay" id="hero-name-2"></span>
+                    <div class="hero-portrait" id="hero-portrait-2">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-2">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-2-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-2-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-2-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-2-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-2-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-2-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Jungle">
+                        <img src="Assets/Lane/jungle.png" alt="Jungle" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-2">Player 2</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 3 (Mid Lane) -->
+                <div class="hero-card blue-side" id="card-3">
+                    <div class="spell-badge" id="spell-badge-3" title="Battle Spell"><img id="spell-img-3" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80115.jpg" alt="Flash"></div>
+                    <span class="hero-name-overlay" id="hero-name-3"></span>
+                    <div class="hero-portrait" id="hero-portrait-3">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-3">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-3-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-3-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-3-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-3-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-3-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-3-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Mid Lane">
+                        <img src="Assets/Lane/mid.png" alt="Mid Lane" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-3">Player 3</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 4 (Farm Lane) -->
+                <div class="hero-card blue-side" id="card-4">
+                    <div class="spell-badge" id="spell-badge-4" title="Battle Spell"><img id="spell-img-4" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80115.jpg" alt="Flash"></div>
+                    <span class="hero-name-overlay" id="hero-name-4"></span>
+                    <div class="hero-portrait" id="hero-portrait-4">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-4">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-4-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-4-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-4-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-4-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-4-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-4-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Farm Lane">
+                        <img src="Assets/Lane/farm.png" alt="Farm Lane" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-4">Player 4</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 5 (Roam) -->
+                <div class="hero-card blue-side" id="card-5">
+                    <div class="spell-badge" id="spell-badge-5" title="Battle Spell"><img id="spell-img-5" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80102.jpg" alt="Heal"></div>
+                    <span class="hero-name-overlay" id="hero-name-5"></span>
+                    <div class="hero-portrait" id="hero-portrait-5">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-5">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-5-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-5-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-5-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-5-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-5-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-5-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Roam">
+                        <img src="Assets/Lane/roam.png" alt="Roam" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-5">Player 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separator -->
+            <div class="cards-separator">
+                <div class="separator-line"></div>
+            </div>
+
+            <!-- Red Side (Right, slots 6-10, reversed: Roam, Farm, Mid, Jungle, Clash) -->
+            <div class="team-cards team-cards-right">
+                <!-- Hero Card 6 (Roam) -->
+                <div class="hero-card red-side" id="card-6">
+                    <div class="spell-badge" id="spell-badge-6" title="Battle Spell"><img id="spell-img-6" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80102.jpg" alt="Heal"></div>
+                    <span class="hero-name-overlay" id="hero-name-6"></span>
+                    <div class="hero-portrait" id="hero-portrait-6">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-6">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-6-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-6-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-6-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-6-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-6-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-6-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Roam">
+                        <img src="Assets/Lane/roam.png" alt="Roam" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-6">Player 6</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 7 (Farm Lane) -->
+                <div class="hero-card red-side" id="card-7">
+                    <div class="spell-badge" id="spell-badge-7" title="Battle Spell"><img id="spell-img-7" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80115.jpg" alt="Flash"></div>
+                    <span class="hero-name-overlay" id="hero-name-7"></span>
+                    <div class="hero-portrait" id="hero-portrait-7">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-7">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-7-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-7-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-7-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-7-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-7-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-7-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Farm Lane">
+                        <img src="Assets/Lane/farm.png" alt="Farm Lane" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-7">Player 7</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 8 (Mid Lane) -->
+                <div class="hero-card red-side" id="card-8">
+                    <div class="spell-badge" id="spell-badge-8" title="Battle Spell"><img id="spell-img-8" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80115.jpg" alt="Flash"></div>
+                    <span class="hero-name-overlay" id="hero-name-8"></span>
+                    <div class="hero-portrait" id="hero-portrait-8">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-8">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-8-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-8-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-8-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-8-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-8-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-8-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Mid Lane">
+                        <img src="Assets/Lane/mid.png" alt="Mid Lane" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-8">Player 8</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 9 (Jungle) -->
+                <div class="hero-card red-side" id="card-9">
+                    <div class="spell-badge" id="spell-badge-9" title="Battle Spell"><img id="spell-img-9" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80104.jpg" alt="Smite"></div>
+                    <span class="hero-name-overlay" id="hero-name-9"></span>
+                    <div class="hero-portrait" id="hero-portrait-9">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-9">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-9-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-9-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-9-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-9-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-9-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-9-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Jungle">
+                        <img src="Assets/Lane/jungle.png" alt="Jungle" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-9">Player 9</span>
+                    </div>
+                </div>
+
+                <!-- Hero Card 10 (Clash Lane) -->
+                <div class="hero-card red-side" id="card-10">
+                    <div class="spell-badge" id="spell-badge-10" title="Battle Spell"><img id="spell-img-10" src="https://game.gtimg.cn/images/yxzj/img201606/summoner/80115.jpg" alt="Flash"></div>
+                    <span class="hero-name-overlay" id="hero-name-10"></span>
+                    <div class="hero-portrait" id="hero-portrait-10">
+                        <span class="placeholder-icon">⚔</span>
+                    </div>
+                    <div class="kda-section">
+                        <span class="kda-text" id="kda-display-10">0 / 0 / 0</span>
+                    </div>
+                    <div class="hero-items-section">
+                        <div class="hero-items-grid">
+                            <div class="item-slot-overlay" id="hero-item-10-1"></div>
+                            <div class="item-slot-overlay" id="hero-item-10-2"></div>
+                            <div class="item-slot-overlay" id="hero-item-10-3"></div>
+                            <div class="item-slot-overlay" id="hero-item-10-4"></div>
+                            <div class="item-slot-overlay" id="hero-item-10-5"></div>
+                            <div class="item-slot-overlay" id="hero-item-10-6"></div>
+                        </div>
+                    </div>
+                    <div class="bottom-lane-section" title="Clash Lane">
+                        <img src="Assets/Lane/clash.png" alt="Clash Lane" class="bottom-lane-icon">
+                    </div>
+                    <div class="player-name-section">
+                        <span class="player-name" id="player-name-10">Player 10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="scoreboard-footer">
+            <span class="footer-star">✦</span>
+            <span class="tournament-name-display" id="tournament-name">HONOR OF KINGS TOURNAMENT</span>
+            <span class="footer-star">✦</span>
+        </div>
+
+    </div>
+
+    <!-- ===== CONTROL PANEL ===== -->
+    <div class="control-panel">
+        <h1>⚙ SCOREBOARD CONTROL</h1>
+
+        <!-- Team & Tournament Settings -->
+        <div class="control-section">
+            <div class="control-group">
+                <h3>🔵 Team Left (Blue)</h3>
+                <label for="sb-team1-name">Nama Tim</label>
+                <input type="text" id="sb-team1-name" value="TEAM A" oninput="updateTeamNames()">
+                <label for="sb-score1">Score</label>
+                <input type="number" id="sb-score1" value="0" min="0" max="99" oninput="updateScores()">
+                <label for="sb-logo1">Logo Tim</label>
+                <input type="file" id="sb-logo1" accept="image/*" onchange="uploadTeamLogo(event, 'left')">
+            </div>
+
+            <div class="control-group">
+                <h3>🔴 Team Right (Red)</h3>
+                <label for="sb-team2-name">Nama Tim</label>
+                <input type="text" id="sb-team2-name" value="TEAM B" oninput="updateTeamNames()">
+                <label for="sb-score2">Score</label>
+                <input type="number" id="sb-score2" value="0" min="0" max="99" oninput="updateScores()">
+                <label for="sb-logo2">Logo Tim</label>
+                <input type="file" id="sb-logo2" accept="image/*" onchange="uploadTeamLogo(event, 'right')">
+            </div>
+
+            <div class="control-group">
+                <h3>🏆 Turnamen</h3>
+                <label for="sb-tournament-name">Nama Turnamen</label>
+                <input type="text" id="sb-tournament-name" value="HONOR OF KINGS TOURNAMENT" oninput="updateTournamentName()">
+
+                <div class="winner-toggle">
+                    <label for="sb-winner">Winner:</label>
+                    <select id="sb-winner" onchange="updateWinner()">
+                        <option value="left">Left (Blue) Win</option>
+                        <option value="right">Right (Red) Win</option>
+                        <option value="none">Hide</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>🔧 Actions</h3>
+                <div class="control-buttons">
+                    <button class="control-btn secondary" onclick="switchTeams()">🔄 Switch Teams</button>
+                    <button class="control-btn danger" onclick="resetScoreboard()">🗑 Reset All</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Picks - Blue Side -->
+        <h2>🔵 BLUE SIDE — Hero Pick</h2>
+        <div class="control-section">
+            <div class="hero-picker-row">
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/clash.png" alt=""> Slot 1 (Clash)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-1" placeholder="Search hero..." oninput="filterHeroDropdown(1)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-1"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/jungle.png" alt=""> Slot 2 (Jungle)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-2" placeholder="Search hero..." oninput="filterHeroDropdown(2)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-2"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/mid.png" alt=""> Slot 3 (Mid)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-3" placeholder="Search hero..." oninput="filterHeroDropdown(3)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-3"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/farm.png" alt=""> Slot 4 (Farm)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-4" placeholder="Search hero..." oninput="filterHeroDropdown(4)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-4"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/roam.png" alt=""> Slot 5 (Roam)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-5" placeholder="Search hero..." oninput="filterHeroDropdown(5)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battle Spells - Blue Side -->
+        <h2>🔵 BLUE SIDE — Battle Spells (Mantra Tempur)</h2>
+        <div class="control-section">
+            <div class="spell-select-row">
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/clash.png" alt=""> Slot 1 (Clash)</label>
+                    <select id="spell-select-1" onchange="updateSpell(1)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/jungle.png" alt=""> Slot 2 (Jungle)</label>
+                    <select id="spell-select-2" onchange="updateSpell(2)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/mid.png" alt=""> Slot 3 (Mid)</label>
+                    <select id="spell-select-3" onchange="updateSpell(3)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/farm.png" alt=""> Slot 4 (Farm)</label>
+                    <select id="spell-select-4" onchange="updateSpell(4)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/roam.png" alt=""> Slot 5 (Roam)</label>
+                    <select id="spell-select-5" onchange="updateSpell(5)"></select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nicknames - Blue Side -->
+        <h2>🔵 BLUE SIDE — Player Nicknames</h2>
+        <div class="control-section">
+            <div class="nick-input-row">
+                <div class="nick-slot"><label><img src="Assets/Lane/clash.png" alt=""> Player 1 (Clash)</label><input type="text" id="nick-input-1" placeholder="Nickname" oninput="updatePlayerName(1)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/jungle.png" alt=""> Player 2 (Jungle)</label><input type="text" id="nick-input-2" placeholder="Nickname" oninput="updatePlayerName(2)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/mid.png" alt=""> Player 3 (Mid)</label><input type="text" id="nick-input-3" placeholder="Nickname" oninput="updatePlayerName(3)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/farm.png" alt=""> Player 4 (Farm)</label><input type="text" id="nick-input-4" placeholder="Nickname" oninput="updatePlayerName(4)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/roam.png" alt=""> Player 5 (Roam)</label><input type="text" id="nick-input-5" placeholder="Nickname" oninput="updatePlayerName(5)"></div>
+            </div>
+        </div>
+
+        <!-- KDA Controls - Blue Side -->
+        <h2>🔵 BLUE SIDE — Player KDA (Kill / Death / Assist)</h2>
+        <div class="control-section">
+            <div class="kda-input-row">
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/clash.png" alt=""> P1 (Clash)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-1" value="0" min="0" placeholder="K" oninput="updateKDA(1)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-1" value="0" min="0" placeholder="D" oninput="updateKDA(1)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-1" value="0" min="0" placeholder="A" oninput="updateKDA(1)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/jungle.png" alt=""> P2 (Jungle)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-2" value="0" min="0" placeholder="K" oninput="updateKDA(2)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-2" value="0" min="0" placeholder="D" oninput="updateKDA(2)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-2" value="0" min="0" placeholder="A" oninput="updateKDA(2)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/mid.png" alt=""> P3 (Mid)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-3" value="0" min="0" placeholder="K" oninput="updateKDA(3)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-3" value="0" min="0" placeholder="D" oninput="updateKDA(3)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-3" value="0" min="0" placeholder="A" oninput="updateKDA(3)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/farm.png" alt=""> P4 (Farm)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-4" value="0" min="0" placeholder="K" oninput="updateKDA(4)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-4" value="0" min="0" placeholder="D" oninput="updateKDA(4)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-4" value="0" min="0" placeholder="A" oninput="updateKDA(4)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/roam.png" alt=""> P5 (Roam)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-5" value="0" min="0" placeholder="K" oninput="updateKDA(5)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-5" value="0" min="0" placeholder="D" oninput="updateKDA(5)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-5" value="0" min="0" placeholder="A" oninput="updateKDA(5)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Selection - Blue Side -->
+        <h2>🔵 BLUE SIDE — Item Build Selection</h2>
+        <div class="player-item-row">
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/clash.png" class="ctrl-lane-icon" alt=""> Player 1 (Clash)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-1-1" onclick="openItemPicker(1, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-1-2" onclick="openItemPicker(1, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-1-3" onclick="openItemPicker(1, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-1-4" onclick="openItemPicker(1, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-1-5" onclick="openItemPicker(1, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-1-6" onclick="openItemPicker(1, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/jungle.png" class="ctrl-lane-icon" alt=""> Player 2 (Jungle)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-2-1" onclick="openItemPicker(2, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-2-2" onclick="openItemPicker(2, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-2-3" onclick="openItemPicker(2, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-2-4" onclick="openItemPicker(2, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-2-5" onclick="openItemPicker(2, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-2-6" onclick="openItemPicker(2, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/mid.png" class="ctrl-lane-icon" alt=""> Player 3 (Mid)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-3-1" onclick="openItemPicker(3, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-3-2" onclick="openItemPicker(3, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-3-3" onclick="openItemPicker(3, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-3-4" onclick="openItemPicker(3, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-3-5" onclick="openItemPicker(3, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-3-6" onclick="openItemPicker(3, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/farm.png" class="ctrl-lane-icon" alt=""> Player 4 (Farm)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-4-1" onclick="openItemPicker(4, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-4-2" onclick="openItemPicker(4, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-4-3" onclick="openItemPicker(4, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-4-4" onclick="openItemPicker(4, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-4-5" onclick="openItemPicker(4, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-4-6" onclick="openItemPicker(4, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/roam.png" class="ctrl-lane-icon" alt=""> Player 5 (Roam)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-5-1" onclick="openItemPicker(5, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-5-2" onclick="openItemPicker(5, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-5-3" onclick="openItemPicker(5, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-5-4" onclick="openItemPicker(5, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-5-5" onclick="openItemPicker(5, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-5-6" onclick="openItemPicker(5, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Picks - Red Side -->
+        <h2>🔴 RED SIDE — Hero Pick</h2>
+        <div class="control-section">
+            <div class="hero-picker-row">
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/roam.png" alt=""> Slot 6 (Roam)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-6" placeholder="Search hero..." oninput="filterHeroDropdown(6)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-6"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/farm.png" alt=""> Slot 7 (Farm)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-7" placeholder="Search hero..." oninput="filterHeroDropdown(7)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-7"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/mid.png" alt=""> Slot 8 (Mid)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-8" placeholder="Search hero..." oninput="filterHeroDropdown(8)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-8"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/jungle.png" alt=""> Slot 9 (Jungle)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-9" placeholder="Search hero..." oninput="filterHeroDropdown(9)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-9"></div>
+                    </div>
+                </div>
+                <div class="hero-picker-slot">
+                    <span class="slot-label"><img src="Assets/Lane/clash.png" alt=""> Slot 10 (Clash)</span>
+                    <div class="hero-dropdown-container">
+                        <input type="text" id="hero-search-10" placeholder="Search hero..." oninput="filterHeroDropdown(10)">
+                        <div class="hero-dropdown-items" id="hero-dropdown-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battle Spells - Red Side -->
+        <h2>🔴 RED SIDE — Battle Spells (Mantra Tempur)</h2>
+        <div class="control-section">
+            <div class="spell-select-row">
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/roam.png" alt=""> Slot 6 (Roam)</label>
+                    <select id="spell-select-6" onchange="updateSpell(6)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/farm.png" alt=""> Slot 7 (Farm)</label>
+                    <select id="spell-select-7" onchange="updateSpell(7)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/mid.png" alt=""> Slot 8 (Mid)</label>
+                    <select id="spell-select-8" onchange="updateSpell(8)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/jungle.png" alt=""> Slot 9 (Jungle)</label>
+                    <select id="spell-select-9" onchange="updateSpell(9)"></select>
+                </div>
+                <div class="spell-select-slot">
+                    <label><img src="Assets/Lane/clash.png" alt=""> Slot 10 (Clash)</label>
+                    <select id="spell-select-10" onchange="updateSpell(10)"></select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nicknames - Red Side -->
+        <h2>🔴 RED SIDE — Player Nicknames</h2>
+        <div class="control-section">
+            <div class="nick-input-row">
+                <div class="nick-slot"><label><img src="Assets/Lane/roam.png" alt=""> Player 6 (Roam)</label><input type="text" id="nick-input-6" placeholder="Nickname" oninput="updatePlayerName(6)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/farm.png" alt=""> Player 7 (Farm)</label><input type="text" id="nick-input-7" placeholder="Nickname" oninput="updatePlayerName(7)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/mid.png" alt=""> Player 8 (Mid)</label><input type="text" id="nick-input-8" placeholder="Nickname" oninput="updatePlayerName(8)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/jungle.png" alt=""> Player 9 (Jungle)</label><input type="text" id="nick-input-9" placeholder="Nickname" oninput="updatePlayerName(9)"></div>
+                <div class="nick-slot"><label><img src="Assets/Lane/clash.png" alt=""> Player 10 (Clash)</label><input type="text" id="nick-input-10" placeholder="Nickname" oninput="updatePlayerName(10)"></div>
+            </div>
+        </div>
+
+        <!-- KDA Controls - Red Side -->
+        <h2>🔴 RED SIDE — Player KDA (Kill / Death / Assist)</h2>
+        <div class="control-section">
+            <div class="kda-input-row">
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/roam.png" alt=""> P6 (Roam)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-6" value="0" min="0" placeholder="K" oninput="updateKDA(6)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-6" value="0" min="0" placeholder="D" oninput="updateKDA(6)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-6" value="0" min="0" placeholder="A" oninput="updateKDA(6)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/farm.png" alt=""> P7 (Farm)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-7" value="0" min="0" placeholder="K" oninput="updateKDA(7)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-7" value="0" min="0" placeholder="D" oninput="updateKDA(7)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-7" value="0" min="0" placeholder="A" oninput="updateKDA(7)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/mid.png" alt=""> P8 (Mid)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-8" value="0" min="0" placeholder="K" oninput="updateKDA(8)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-8" value="0" min="0" placeholder="D" oninput="updateKDA(8)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-8" value="0" min="0" placeholder="A" oninput="updateKDA(8)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/jungle.png" alt=""> P9 (Jungle)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-9" value="0" min="0" placeholder="K" oninput="updateKDA(9)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-9" value="0" min="0" placeholder="D" oninput="updateKDA(9)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-9" value="0" min="0" placeholder="A" oninput="updateKDA(9)">
+                    </div>
+                </div>
+                <div class="kda-slot">
+                    <label><img src="Assets/Lane/clash.png" alt=""> P10 (Clash)</label>
+                    <div class="kda-inputs">
+                        <input type="number" id="kda-k-10" value="0" min="0" placeholder="K" oninput="updateKDA(10)">
+                        <span>/</span>
+                        <input type="number" id="kda-d-10" value="0" min="0" placeholder="D" oninput="updateKDA(10)">
+                        <span>/</span>
+                        <input type="number" id="kda-a-10" value="0" min="0" placeholder="A" oninput="updateKDA(10)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Selection - Red Side -->
+        <h2>🔴 RED SIDE — Item Build Selection</h2>
+        <div class="player-item-row">
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/roam.png" class="ctrl-lane-icon" alt=""> Player 6 (Roam)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-6-1" onclick="openItemPicker(6, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-6-2" onclick="openItemPicker(6, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-6-3" onclick="openItemPicker(6, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-6-4" onclick="openItemPicker(6, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-6-5" onclick="openItemPicker(6, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-6-6" onclick="openItemPicker(6, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/farm.png" class="ctrl-lane-icon" alt=""> Player 7 (Farm)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-7-1" onclick="openItemPicker(7, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-7-2" onclick="openItemPicker(7, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-7-3" onclick="openItemPicker(7, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-7-4" onclick="openItemPicker(7, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-7-5" onclick="openItemPicker(7, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-7-6" onclick="openItemPicker(7, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/mid.png" class="ctrl-lane-icon" alt=""> Player 8 (Mid)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-8-1" onclick="openItemPicker(8, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-8-2" onclick="openItemPicker(8, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-8-3" onclick="openItemPicker(8, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-8-4" onclick="openItemPicker(8, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-8-5" onclick="openItemPicker(8, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-8-6" onclick="openItemPicker(8, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/jungle.png" class="ctrl-lane-icon" alt=""> Player 9 (Jungle)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-9-1" onclick="openItemPicker(9, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-9-2" onclick="openItemPicker(9, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-9-3" onclick="openItemPicker(9, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-9-4" onclick="openItemPicker(9, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-9-5" onclick="openItemPicker(9, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-9-6" onclick="openItemPicker(9, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+            <div class="player-item-box">
+                <h4><img src="Assets/Lane/clash.png" class="ctrl-lane-icon" alt=""> Player 10 (Clash)</h4>
+                <div class="ctrl-item-slots">
+                    <div class="ctrl-item-slot" id="ctrl-item-10-1" onclick="openItemPicker(10, 1)"><span class="slot-num">1</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-10-2" onclick="openItemPicker(10, 2)"><span class="slot-num">2</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-10-3" onclick="openItemPicker(10, 3)"><span class="slot-num">3</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-10-4" onclick="openItemPicker(10, 4)"><span class="slot-num">4</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-10-5" onclick="openItemPicker(10, 5)"><span class="slot-num">5</span></div>
+                    <div class="ctrl-item-slot" id="ctrl-item-10-6" onclick="openItemPicker(10, 6)"><span class="slot-num">6</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== ITEM PICKER MODAL ===== -->
+    <div class="item-picker-modal" id="item-picker-modal">
+        <div class="item-picker-content">
+            <div class="item-picker-header">
+                <h3 id="item-picker-target-label">Pilih Item Build</h3>
+                <button class="item-picker-close" onclick="closeItemPicker()">✕</button>
+            </div>
+            <div class="item-picker-filterbar">
+                <div class="item-cat-tabs">
+                    <button class="item-cat-btn active" data-category="all" onclick="setItemCategoryFilter('all')">Semua</button>
+                    <button class="item-cat-btn" data-category="attack" onclick="setItemCategoryFilter('attack')">⚔ Serangan</button>
+                    <button class="item-cat-btn" data-category="magic" onclick="setItemCategoryFilter('magic')">🔮 Sihir</button>
+                    <button class="item-cat-btn" data-category="defense" onclick="setItemCategoryFilter('defense')">🛡 Pertahanan</button>
+                    <button class="item-cat-btn" data-category="movement" onclick="setItemCategoryFilter('movement')">👟 Pergerakan</button>
+                    <button class="item-cat-btn" data-category="jungle" onclick="setItemCategoryFilter('jungle')">🌴 Hutan</button>
+                    <button class="item-cat-btn" data-category="support" onclick="setItemCategoryFilter('support')">🛡️ Support</button>
+                </div>
+                <input type="text" id="item-picker-search" class="item-picker-search-input" placeholder="Cari nama item..." oninput="renderItemPickerGrid()">
+            </div>
+            <div class="item-picker-grid" id="item-picker-grid"></div>
+        </div>
+    </div>
+
+    <script src="scoreboard.js"></script>
+</body>
+
+</html>
