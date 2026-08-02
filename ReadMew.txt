@@ -1,0 +1,1 @@
+Besar logo yang digunakan adala 50px X 50px
